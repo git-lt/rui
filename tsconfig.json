@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "downlevelIteration": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
+
+// {
+//   "compilerOptions": {
+//     "target": "es6",
+//     "module": "es2015",
+//     "jsx": "react",
+//     "moduleResolution": "node",
+//     "outDir": "lib",
+//     // 不要删除注释
+//     "removeComments": false,
+//     // 保留 const enums 申明
+//     "preserveConstEnums": true,
+//     // 更新模块引用
+//     "forceConsistentCasingInFileNames": true,
+//     // 不是函数的所有返回路径都有返回值时报错
+//     "noImplicitReturns": true,
+//     "suppressImplicitAnyIndexErrors": true,
+//     // 可以使用 any
+//     "noImplicitAny": false,
+//     // 有未使用的局部变量则抛错
+//     "noUnusedLocals": true,
+//     // 有未使用的参数则抛错
+//     "noUnusedParameters": true,
+//     // 不能给有类型的值赋值 null 或 undefined
+//     "strictNullChecks": true,
+//     "sourceMap": true,
+//     "baseUrl": "./src",
+//     // 允许编译javascript文件
+//     "allowJs": true,
+//     "importHelpers": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     // 可以使用 Decorators
+//     "experimentalDecorators": true,
+//     "resolveJsonModule": true,
+//     "typeRoots": ["node_modules/@types", "global.d.ts", "types"]
+//   },
+//   "include": ["src"],
+//   "exclude": ["./node_modules", "dist", "**/*.test.js"]
+// }
