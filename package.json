@@ -8,8 +8,7 @@
   "scripts": {
     "start": "father doc dev",
     "build": "father build",
-    "doc:build": "father doc build",
-    "doc:deploy": "father doc deploy",
+    "deploy": "father doc deploy",
     "test": "father test"
   },
   "keywords": [
@@ -80,10 +79,10 @@
   "homepage": "",
   "respository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:git-lt/rui.git"
   },
   "bugs": {
-    "url": ""
+    "url": "git@github.com:git-lt/rui.git/issues"
   },
   "husky": {
     "hooks": {
@@ -107,6 +106,6 @@
     "lib/**/style/*",
     "*.less"
   ],
-  "author": "hz_liutao@qq.com",
+  "author": "Aitter <hz_liutao@qq.com>",
   "license": "MIT"
 }

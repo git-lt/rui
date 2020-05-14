@@ -15,9 +15,10 @@ const options = {
   },
   doc: {
     title: 'rui',
+    // typescript: true,
     themeConfig: { mode: 'light' },
     base: '/rui',
-    menu: [],
+    menu: ['首页', '更新日志', '组件'],
   },
   extraBabelPlugins: [
     [
