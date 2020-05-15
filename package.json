@@ -1,0 +1,67 @@
+{
+  "name": "@qiejs/rui",
+  "version": "0.0.1",
+  "description": "基于React、Antd的扩展组件库",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "build": "father-build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "dist/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.0.5",
+    "@babel/runtime": "^7.7.1",
+    "dumi": "^1.0.6",
+    "father-build": "^1.17.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "antd": "^4.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "antd": ">=3.26.16"
+  },
+  "respository": {
+    "type": "git",
+    "url": "git@github.com:git-lt/rui.git"
+  },
+  "bugs": {
+    "url": "git@github.com:git-lt/rui.git/issues"
+  },
+  "author": "Aitter <hz_liutao@qq.com>",
+  "license": "MIT",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "components",
+    "antd",
+    "rui"
+  ],
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ]
+}
