@@ -1,12 +1,17 @@
 {
   "name": "@qiejs/rui",
-  "version": "0.0.1",
-  "description": "基于React、Antd的扩展组件库",
+  "version": "0.0.7-0",
+  "description": "基于React、Antd扩展的业务组件库",
   "scripts": {
     "start": "dumi dev",
-    "docs:build": "dumi build",
+    "doc:build": "dumi build",
     "build": "father-build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "deploy": "gh-pages -d dist",
+    "new": "plop --plopfile ./scripts/plopfile.js",
+    "release": "node ./scripts/release.js",
+    "commit": "git-cz",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
@@ -17,31 +22,58 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+    "src/**/*.ts?(x)": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
     ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
+    "src/**/*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
+    "@babel/runtime": "^7.7.1",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
-    "@babel/runtime": "^7.7.1",
+    "copy-to-clipboard": "^3.3.1",
     "dumi": "^1.0.6",
     "father-build": "^1.17.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "qrcode": "^1.4.4",
     "react": "^16.12.0",
+    "react-viewer": "^3.2.1",
     "yorkie": "^2.0.0"
   },
   "devDependencies": {
-    "antd": "^4.2.2"
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@testing-library/react": "^10.0.4",
+    "@types/jest": "^25.2.3",
+    "@types/qrcode": "^1.3.4",
+    "@umijs/fabric": "^2.0.8",
+    "antd": "^4.2.2",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "gh-pages": "^2.2.0",
+    "plop": "^2.6.0"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "antd": ">=3.26.16"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "antd": ">=4.2.2"
   },
   "respository": {
     "type": "git",
@@ -52,7 +84,9 @@
   },
   "author": "Aitter <hz_liutao@qq.com>",
   "license": "MIT",
-  "sideEffects": false,
+  "sideEffects": [
+    "es/**/style/*"
+  ],
   "keywords": [
     "react",
     "components",
@@ -60,8 +94,6 @@
     "rui"
   ],
   "files": [
-    "dist",
-    "lib",
     "es"
   ]
 }
