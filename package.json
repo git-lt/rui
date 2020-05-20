@@ -1,6 +1,6 @@
 {
   "name": "@qiejs/rui",
-  "version": "0.0.7-0",
+  "version": "0.0.8-0",
   "description": "基于React、Antd扩展的业务组件库",
   "scripts": {
     "start": "dumi dev",
